@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateObjectsTable extends Migration
+class CreateObjectTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateObjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('objects', function (Blueprint $table) {
+        Schema::create('object', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+	    $table->unsignedBigInteger('entity_id');
+	    $table->foreign('entity_id')->references('id')->on('entities');
         });
     }
 
@@ -26,6 +27,6 @@ class CreateObjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('objects');
+        Schema::dropIfExists('object');
     }
 }

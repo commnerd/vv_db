@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Scaffolding;
+namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class Object extends Model
+class ScaffoldingObject extends Pivot
 {
     //
 }
