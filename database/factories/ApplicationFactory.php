@@ -1,9 +1,10 @@
 <?php
 
 use Faker\Generator as Faker;
+use App\Application;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Application::class, function (Faker $faker) {
     return [
-        //
+        
     ];
 });
