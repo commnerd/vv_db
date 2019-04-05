@@ -56,6 +56,7 @@ class Base
 
 	public function save(): self
        	{
+		echo "I AM HERE!";
 		if(is_null($this->instantiation)) {
 			$this->instantiation = Instantiation::create(['entity_id' => $this->entity->id]);
 		}

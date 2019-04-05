@@ -1,23 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Scaffolding;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Instantiation extends Model
 {
     public $timestamps = false;
-    protected $table = "objects";
+
+    protected $table = "object";
 }
-
-<?php
-
-namespace App\Scaffolding;
-
-use Illuminate\Database\Eloquent\Model;
-
-class Entity extends Model
-{
-	        public $timestamps = false;
-}
-
