@@ -14,6 +14,8 @@ abstract class Base extends Model
 
 	private $_label;
 
+	protected $table = "";
+
 	protected $entity;
 	protected $instantiation;
 
