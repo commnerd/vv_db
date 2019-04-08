@@ -8,5 +8,5 @@ class Instantiation extends Model
 {
     public $timestamps = false;
 
-    protected $table = "object";
+    protected $fillable = ['entity_id'];
 }

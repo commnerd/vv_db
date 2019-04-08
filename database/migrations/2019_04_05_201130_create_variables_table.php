@@ -15,8 +15,10 @@ class CreateVariablesTable extends Migration
     {
         Schema::create('variables', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('instantiation_id');
+            $table->foreign('instantiation_id')->references('id')->on('instantiations');
             $table->string('key');
-            $table->string('value');
+            $table->string('val');
             $table->timestamps();
         });
     }

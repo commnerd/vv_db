@@ -14,10 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
 	    factory(Application::class, rand(10, 50))->create()->each(function($app) {
-		    factory(Title1Narrative::class)->create([
-			    'application' => $app->id,
-		    ]);
-            });
+            $id = $app->getKey();
+		    $t1 = factory(Title1Narrative::class)->create([
+                'application' => $id,
+            ]);
+        });
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateObjectTable extends Migration
+class CreateInstantiationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateObjectTable extends Migration
      */
     public function up()
     {
-        Schema::create('object', function (Blueprint $table) {
+        Schema::create('instantiations', function (Blueprint $table) {
             $table->bigIncrements('id');
-	    $table->unsignedBigInteger('entity_id');
-	    $table->foreign('entity_id')->references('id')->on('entities');
+    	    $table->unsignedBigInteger('entity_id');
+    	    $table->foreign('entity_id')->references('id')->on('entities');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateObjectTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('object');
+        Schema::dropIfExists('instantiations');
     }
 }
